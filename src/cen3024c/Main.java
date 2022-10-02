@@ -1,16 +1,15 @@
 package cen3024c;
 
-import java.awt.Graphics;
 import javax.swing.JFrame;
 
 
 public class Main {
 
+	// change n to see different results
 	public static int n = 15;
 	public static int[] times;
-	
-	static Graphics g;
-	
+		
+	// recursive method
 	static int recursiveFib(int n)
 	{
 	    if (n <= 1)
@@ -18,6 +17,7 @@ public class Main {
 	    return recursiveFib(n - 1) + recursiveFib(n - 2);
 	}
 	
+	// iterative method
 	static int iterativeFib(int n) {
 	    
 		int a = 0, b = 1, c, i;
@@ -32,7 +32,11 @@ public class Main {
 	    }
 	    return b;
 	}
-		
+	
+	// calculates the processor time in nanoseconds,
+	// converts to milliseconds for bar graph,
+	// and returns an array of the calculations
+	
 	public static int[] methodTimes() {
 		
 		long startTime = System.nanoTime();
