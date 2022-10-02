@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 public class Main {
 
 	// change n to see different results
-	public static int n = 15;
+	public static int n = 20;
 	public static int[] times;
 		
 	// recursive method
@@ -42,11 +42,11 @@ public class Main {
 		long startTime = System.nanoTime();
 		
 		System.out.println(recursiveFib(n));
-		int recursiveTime = (int)(System.nanoTime()-startTime) / 1000;
+		int recursiveTime = (int)(System.nanoTime()-startTime);
 		
 		startTime = System.nanoTime();
 		System.out.println(iterativeFib(n));
-		int iterativeTime = (int)(System.nanoTime()-startTime) / 1000;
+		int iterativeTime = (int)(System.nanoTime()-startTime);
 		
 		int[] n = {recursiveTime, iterativeTime};
 		
@@ -58,6 +58,7 @@ public class Main {
 		times = methodTimes();
 		BarGraph b = new BarGraph();
 		JFrame f = new JFrame();
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		f.add(b);
 		f.setSize(800,800);
